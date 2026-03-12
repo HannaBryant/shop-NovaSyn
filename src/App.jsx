@@ -3,6 +3,9 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { NavBar } from './components/NavBar'
+import { Home } from './pages/Home'
+import { Products } from './pages/Products'
+import { Checkout } from './pages/Checkout'
 import './App.css'
 
 function App() {
@@ -10,19 +13,16 @@ function App() {
 
   return (
     <>
+
+      <BrowserRouter>
       <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/checkout" element={<Checkout />} />
+      </Routes>
+      </BrowserRouter>
 
-      <main className="text-center mt-16 px-6">
-
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
-          Welcome to NovaSyn
-        </h1>
-
-        <p className="text-lg text-gray-600">
-          Discover our newest products and find the perfect model for you.
-        </p>
-
-      </main>
 
     </>
   )
